@@ -1456,7 +1456,7 @@ class Pow(Expr):
 
                 # express "rest" as: rest = 1 + k*x**l + ... + O(x**n)
                 rest = expand_mul((b - prefactor)/prefactor)
-                rest = rest.simplify()
+                rest = rest.simplify() #test_issue_6364
 
                 if rest.is_Order:
                     return 1/prefactor + rest/prefactor + O(x**n, x)
