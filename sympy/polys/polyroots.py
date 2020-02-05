@@ -358,8 +358,11 @@ def roots_quartic(f):
                       roots([1, e, g], multiple=True)]
 
             # sort it out once they know the values of the coefficients
-            return [Piecewise((a1, Eq(p, 0)),(a3 - aon4, Eq(f, 0)), (a2, True))
-                for a1, a2, a3 in zip(_ans(y1), _ans(y2), [-_y1, -_y2, _y1, _y2])]
+            return [Piecewise(
+                (a1, Eq(p, 0)),
+                (a3 - aon4, Eq(f, 0)), (a2, True))
+                for a1, a2, a3 in zip(
+                _ans(y1), _ans(y2), [-_y1, -_y2, _y1, _y2])]
 
 
 def roots_binomial(f):
