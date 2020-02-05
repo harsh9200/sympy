@@ -580,3 +580,8 @@ def test_issue_13425():
 
 def test_issue_17421():
     assert N(acos(-I + acosh(cosh(cosh(1) + I)))) == 1.0*I
+
+
+    s = Sum(1.9**x/factorial(x), (x, 0, oo))
+    a = S.Exp1**1.9
+    assert (s - a).evalf() < 1e-12
