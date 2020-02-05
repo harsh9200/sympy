@@ -685,5 +685,7 @@ def test_roots_composite():
 
 
 def test_issue_17563():
-    assert simplify(solveset(a*x**4 + b*x**3 + c*x**2 + d*x + e, x).subs({a:Rational(1/2), b:0, c:1, d:0, e:-1})) == \
-            FiniteSet(sqrt(-1 + sqrt(3)), -sqrt(-1 + sqrt(3)), sqrt(-sqrt(3) - 1), -sqrt(-sqrt(3) - 1))
+    assert simplify(solveset(a*x**4 + b*x**3 + c*x**2 + d*x + e, x
+        ).subs({a:Rational(1/2), b:0, c:1, d:0, e:-1})
+        ) == FiniteSet(sqrt(-1 + sqrt(3)), -sqrt(-1 + sqrt(3)),
+        sqrt(-sqrt(3) - 1), -sqrt(-sqrt(3) - 1))
